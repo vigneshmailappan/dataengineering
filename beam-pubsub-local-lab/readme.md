@@ -1,5 +1,7 @@
 A beginner‑friendly, zero‑cost setup to learn streaming on your laptop—without touching real GCP.
 
+I have a [medium ariticle](https://medium.com/@vigneshmailappan/building-a-fully-local-pub-sub-apache-beam-streaming-pipeline-zero-cost-beginner-friendly-046a2e2457ce) explaining about how to run this project 
+
 This repo shows how to:
 
 ✅ Create a Pub/Sub topic (locally)

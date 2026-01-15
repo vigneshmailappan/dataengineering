@@ -1,4 +1,28 @@
+"""
+Pubsub quickstart :
+Mental Model : Publisher - Subscriber - Message
 
+    publisher - sender of message 
+
+    topic - mailbox 
+
+    subscriber - receiver of message
+        types : pull | push
+            pull :
+                Messages will stay in subscription until user picks up
+            push : 
+                messages will be delivered automatically upon arrival.
+
+    NOTE : BEAM SUPPORTS ONLY PULL SUBSCRIPTION. WORKERS OF BEAM RUNNER CONTINUOUSLY PULLS MESSAGES
+
+Emulator : 
+    we are using pubsub emulator to run things locally. with emulator we can only use python to handle pubsub. 
+
+Prereqs (emulator):
+    gcloud beta emulators pubsub start --host-port=localhost:8085
+    export PUBSUB_EMULATOR_HOST=localhost:8085
+
+"""
 from google.cloud import pubsub_v1
 
 # Config
@@ -32,23 +56,3 @@ except Exception:
 print("Publishing test message...")
 future = publisher.publish(topic_path, b'{"score": 123}')
 print("✅ Published message ID:", future.result())
-
-# Pubsub
-# Publisher - Subscriber - Message
-
-# publisher - sender of message 
-# topic - mailbox 
-# subscriber - receiver of message
-#   types : pull | push
-#       pull :
-#           Messages will stay in topic ( mailbox ) until user picks up
-#       push : 
-#           messages will be delivered automatically upon arrival.
-#       NOTE : BEAM SUPPORTS ONLY PULL SUBSCRIPTION. WORKERS OF BEAM RUNNER CONTINUOUSLY PULLS MESSAGES
-# 
-# 
-# emulator : 
-#   we are using pubsub emulator to run things locally. with emulator we can only use python to handle pubsub. 
-# 
-# 
-# 

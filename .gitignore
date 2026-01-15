@@ -1,0 +1,29 @@
+
+# Python virtual environment
+.venv/
+venv/
+
+# Python cache and compiled files
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Logs and temp files
+*.log
+*.tmp
+
+# Data files (optional)
+data/
+*.csv
+*.parquet
+*.json
+
+# VS Code settings
+.vscode/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
